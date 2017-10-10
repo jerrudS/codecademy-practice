@@ -1,4 +1,4 @@
-// boilerplate AJAX request
+// boilerplate AJAX GET request
 const xhr = new XMLHttpRequest()
 const url = 'https://api-to-call.com/endpoint'
 xhr.responseType = 'json'
@@ -9,6 +9,19 @@ xhr.onreadystatechange = function(){
 }
 xhr.open('GET', url)
 xhr.send()
+
+// boilerplate AJAX POST request
+const xhr = new XMLHttpRequest()
+const url = 'https://api-to-call.com/endpoint'
+const data = JSON.stringify({id: '200'});
+xhr.responseType = 'json'
+xhr.onreadystatechange = function() {
+  if(xhr.readyState === XMLHttpRequest.DONE) {
+    console.log(xhr.response)
+  }
+}
+xhr.open('POST', url)
+xhr.send(data)
 
 // example main.js for AJAX request to expand a shortened URL (Google URL Shortener API)
 // Include data for accessing Google APIs
