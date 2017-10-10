@@ -15,6 +15,14 @@ function expandUrl() {
   });
 }
 
+// refactored above code to $.get() format
+function expandUrl() {
+	const urlToExpand = url + '?shortUrl=' + $inputField.val() + '&key=' + apiKey;
+  $.get(urlToExpand, response => {
+  $responseField.append('<p>Your expanded url is: </p><p>' + response.longUrl + '</p>');
+}, 'json');
+}
+
 // refactored shortenUrl function to JQuery AJAX POST request format
 function shortenUrl() {
 	const urlWithKey = url + '?key=' + apiKey;
