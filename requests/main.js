@@ -1,4 +1,4 @@
-// boilerplate AJAX GET request
+// boilerplate XHR GET request
 const xhr = new XMLHttpRequest()
 const url = 'https://api-to-call.com/endpoint'
 xhr.responseType = 'json'
@@ -10,7 +10,7 @@ xhr.onreadystatechange = function(){
 xhr.open('GET', url)
 xhr.send()
 
-// boilerplate AJAX POST request
+// boilerplate XHR POST request
 const xhr = new XMLHttpRequest()
 const url = 'https://api-to-call.com/endpoint'
 const data = JSON.stringify({id: '200'});
@@ -23,7 +23,7 @@ xhr.onreadystatechange = function() {
 xhr.open('POST', url)
 xhr.send(data)
 
-// example main.js for AJAX request to expand and shorten a URL (Google URL Shortener API)
+// example main.js for XHR request to expand and shorten a URL (Google URL Shortener API)
 // Include data for accessing Google APIs
 
 const apiKey = 'AIzaSyD1MGM3V3KooE0QZmmzGBK6uzfxVn5zt2c';
