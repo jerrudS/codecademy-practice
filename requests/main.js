@@ -23,7 +23,7 @@ xhr.onreadystatechange = function() {
 xhr.open('POST', url)
 xhr.send(data)
 
-// example main.js for AJAX request to expand a shortened URL (Google URL Shortener API)
+// example main.js for AJAX request to expand and shorten a URL (Google URL Shortener API)
 // Include data for accessing Google APIs
 
 const apiKey = 'AIzaSyD1MGM3V3KooE0QZmmzGBK6uzfxVn5zt2c';
@@ -52,7 +52,19 @@ function expandUrl() {
 }
 
 function shortenUrl() {
-
+  const urlWithKey = url + '?key=' + apiKey;
+  const urlToShorten = $inputField.val()
+  const data = JSON.stringify({longUrl: urlToShorten});
+  const xhr = new XMLHttpRequest()
+  xhr.responseType = 'json'
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+    $responseField.append('<p>Your shortened url is: </p><p>' + xhr.response.id + '</p>');
+		}
+  }
+  xhr.open('POST', urlWithKey)
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(data)
 }
 
 function expand() {
