@@ -38,3 +38,6 @@ else {
 }
 
 ReactDOM.render(img, document.getElementById('app'))
+
+// another way to write the conditional using a ternary operator
+const img = <img src={pics[coinToss() === 'heads' ? 'kitty' : 'doggy']} />;
