@@ -122,3 +122,16 @@ class MyName extends React.Component {
 }
 
 ReactDOM.render(<MyName />, document.getElementById('app'));
+
+// using an event listener
+class Button extends React.Component {
+  scream() {
+    alert('AAAAAAAAHHH!!!!!');
+  }
+
+  render() {
+    return <button onClick={this.scream}>AAAAAH!</button>;
+  }
+}
+
+ReactDOM.render(<Button />, document.getElementById('app'))
