@@ -109,3 +109,16 @@ ReactDOM.render(
 	<TonightsPlan />,
 	document.getElementById('app')
 );
+
+// using this in a react component with a getter
+class MyName extends React.Component {
+	get name() {
+  	return 'Jerrud';
+	}
+
+  render() {
+    return <h1>My name is {this.name}.</h1>;
+  }
+}
+
+ReactDOM.render(<MyName />, document.getElementById('app'));
