@@ -135,3 +135,26 @@ class Button extends React.Component {
 }
 
 ReactDOM.render(<Button />, document.getElementById('app'))
+
+// using this.props.children
+class BigButton extends React.Component {
+  render() {
+    console.log(this.props.children);
+    return <button>Yo I am big</button>;
+  }
+}
+
+// Example 1 this.props.children = "I am a child of BigButton"
+<BigButton>
+  I am a child of BigButton.
+</BigButton>
+
+
+// Example 2 this.props.children = <LilButton /> component
+<BigButton>
+  <LilButton />
+</BigButton>
+
+
+// Example 3 = undefined
+<BigButton />
